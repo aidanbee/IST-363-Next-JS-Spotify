@@ -52,7 +52,7 @@ const SingleAlbumPage = ({albumData}) => {
                 </Link>
             </Heading>
         })}
-       { songsToAlbums && 
+       {songsToAlbums && 
         <section>
             <Row>
             <Heading level = "2">Songs</Heading>
@@ -66,7 +66,7 @@ const SingleAlbumPage = ({albumData}) => {
             })}
             </Row>
         </section>
-}
+        }
     </Layout>
 }
 export default SingleAlbumPage;

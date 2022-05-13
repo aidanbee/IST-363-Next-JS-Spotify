@@ -1,9 +1,9 @@
 import Col from '../../components/Col';
 import Container from '../../components/Container';
 import Heading from '../../components/Heading'
-import Image from 'next/Image';
+import Image from 'next/image';
 import Layout from '../../components/Layout';
-import Link from 'next/Link';
+import Link from 'next/link';
 import Paragraph from '../../components/Paragraph'
 import Row from '../../components/Row';
 
