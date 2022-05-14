@@ -23,7 +23,7 @@ export default function Home({albums}) {
   return (
     <Layout>
         <Head>
-            <title>Creattttttte Next App</title>
+            <title>IST 363 Spotify</title>
             <link rel="icon" href="/favicon.ico" />
             <meta name="description" content="This a description of my website for search engine results"/>
         </Head>
