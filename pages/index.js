@@ -1,19 +1,25 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
+
 
 //custom components
-import Button from '../components/Button'
-import Col from '../components/Col'
-import Container from '../components/Container'
-import Heading from '../components/Heading'
+
 import Layout from '../components/Layout'
-import Paragraph from '../components/Paragraph'
-import Row from '../components/Row'
-import TracksByGenre from '../components/TracksByGenre'
+import NewReleases from '../components/NewReleases'
+import Showcase from '../components/Showcase'
 
 
-export default function Home() {
+import {getAlbums} from '../lib/api'
+
+export async function getStaticProps() {
+  const albums = await getAlbums()
+  return {
+    props: {
+        albums
+    }
+  }
+}
+
+export default function Home({albums}) {
   return (
     <Layout>
         <Head>
@@ -21,18 +27,10 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
             <meta name="description" content="This a description of my website for search engine results"/>
         </Head>
-        <section>
-          <Container>
-            <Row>
-              <Col sm="6" md="4" lg="3">Col 1</Col>
-              <Col sm="6" md="4" lg="3">Col 2</Col>
-              <Col sm="6" md="4" lg="3">Col 3</Col>
-              <Col sm="6" md="4" lg="3">Col 4</Col>
-            </Row>
-          </Container>
-        </section>
-            
-        <TracksByGenre />
+        <Showcase />
+        <NewReleases items={albums}/>
+
+        {/*<TracksByGenre items={tracks}/>*/}
 
     </Layout>
   )

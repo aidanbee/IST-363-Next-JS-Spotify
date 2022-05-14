@@ -2,6 +2,9 @@
 
 $sizes: xs, sm, md, lg; 
 $textAlignments: left, center, right;
+$flexDirectionValues:row,row-reverse,column,column-reverse;
+$justifyContentValues:flex-start, flex-end, center, space-between, space-around, space-evenly;
+$alignItemsValues: flex-start, flex-end, center, stretch, baseline;
 
 .col{
     //background-color: aqua;
@@ -23,5 +26,27 @@ $textAlignments: left, center, right;
             text-align: $textAlignment;
         }
     }
+
+    @each $value in $flexDirectionValues{
+        &.flex-direction-#{$value} {
+            flex-direction: $value;
+            display:flex;
+        }
+    }
+
+    @each $value in $justifyContentValues{
+        &.justify-content-#{$value} {
+            justify-content: $value;
+            display: flex;
+        }
+    }
+
+    @each $value in $alignItemsValues{
+        &.align-items-#{$value} {
+            align-items: $value;
+        }
+    }
+
+    @include mixins.marginBottom();
 
 } //col parent class

@@ -1,26 +1,30 @@
+@use '../sass/abstracts/vars.scss';
+
 .btn{
-    background-color: limegreen;
-    border:1px solid white;
-    color:white;
-    padding: .5rem 1rem;
+    border:0px;
+    padding: .75rem 1.25em;
     font-family:Arial;
     font-weight:bold;
     text-transform:uppercase;
+    border-radius:200px;
     margin:.5rem;
     a{
-        color:white;
+        color:rgb(0, 0, 0);
+        text-decoration: none;
     }
     &.primary{
-        background-color: limegreen;
+        background-color: vars.$color_primary;
     }
     &.secondary{
         background-color:white;
-        border: 1px solid limegreen;
-        color: limegreen
+        border: 1px solid vars.$color_primary;
+        color: vars.$color_primary
     }
 
 }
 
 .btn:hover{
-    background-color:darkmagenta;
+    background-color:black;
+    color:white;
+
 }
